@@ -2,13 +2,15 @@
     var dataAno = new Date()
     var AnoAtual = dataAno.getFullYear()
     var inputAno = window.document.getElementById("input-ano-nascimento")
+
+    if(inputAno.value.length == 0 || Number(inputAno.value) > AnoAtual) {
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
+    } else {
     var inputFemi = window.document.getElementById("input-femi")
     var inputMasc = window.document.getElementById("input-masc")
     var paragrafo_resul = window.document.getElementById("resul")
     var img = window.document.getElementById("imagem")
-    var submit = window.document.getElementById("input-submit")
     var idade = AnoAtual - inputAno.value
-
         //Feminino
 
     if (inputFemi.checked && idade < 18) {
@@ -35,3 +37,4 @@
         img.src = "./img/m3.jpg"
     }
     }
+}
